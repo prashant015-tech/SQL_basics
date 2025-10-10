@@ -1,0 +1,85 @@
+Select * from actor;
+Select first_name, actor_id  from actor;
+
+select * from information_schema.columns
+where table_name ='actor';
+
+
+--want to send promotional emails to customer
+select first_name,last_name,email from customer;
+
+
+--How to Select Unique Records from a Table?
+select distinct actor.first_name from actor;
+
+-- Count
+
+Select distinct count(first_name) from  actor;
+Select count(first_name),count(actor_id) from actor;
+Select distinct ((first_name,actor_id)) from actor;
+SELECT distinct(count (amount)) from payment;
+
+
+-- Where
+
+Select * from payment
+where customer_id =341;
+
+select sum(amount) from payment
+where customer_id =341  and staff_id =1;
+
+select * from customer
+where store_id =1 and activebool =true;
+
+select * from film
+where rental_rate > 2 and rental_duration = 6;
+
+select * from film
+where rental_rate > 2 and rental_duration = 6 and length > 60;
+
+
+select * from film
+where rental_rate > 2 and rental_duration = 6 and length > 60 and rating ='G';
+
+Select count(*) from film
+where rating != 'R';
+
+
+-- MAX and min
+
+SELECT MIN(address_id)
+FROM customer;
+
+SELECT MAX(address_id)
+FROM customer;
+
+-- Order by
+
+Select  amount from payment
+order by amount ;
+
+
+
+Select  amount from payment
+order by amount desc ;
+
+
+-- Limit
+Select * from payment
+limit 5;
+
+
+Select customer_id, amount from payment
+where customer_id = 184 or customer_id = 51 or customer_id =341
+order by amount desc
+limit 5
+
+
+
+
+
+
+
+
+
+
