@@ -75,9 +75,49 @@ order by amount desc
 limit 5
 
 
+Select customer_id,amount from payment;
+
+-- Between
+Select customer_id,amount from payment
+where customer_id between 300 and 500;
+
+select * from payment
+where payment_date between '2007-02-1' and '2007-02-15'
+
+-- Not Between
+
+Select * from payment
+where payment_date NOT BETWEEN '2007-02-1' and '2007-02-15';
+
+-- In
+Select * from payment
+where amount in (0.99,2.99,7.99);
+
+-- NOT In
+
+Select * from payment
+where amount NOT in (0.99,2.99,7.99);
 
 
+-- Like
+select * from customer
+where first_name Like 'A%'
 
+Select * from customer
+where first_name like 'A%' and last_name    not LIKE 'H%';
+
+
+select * from customer
+where first_name ILike 'a%' and last_name Not ILike '%h';
+
+Select * from customer
+where first_name like 'P%';
+
+Select * from customer
+where first_name like '_her%';
+
+Select * from customer
+where first_name Not like '_her%';
 
 
 
