@@ -120,6 +120,27 @@ Select * from customer
 where first_name Not like '_her%';
 
 
+Select * from customer
+where first_name like 'D%';
 
+Select * from customer
+where upper(first_name) like '%E';
+
+select * from customer
+where upper(first_name)  like '%AN%';
+
+
+select * from customer
+where lower(first_name)  like 'a%o';
+
+-- Having
+Select store_id,count(customer_id ) from customer
+group by store_id
+having count(customer_id )> 200;
+
+Select customer_id ,sum(amount) from payment
+where staff_id =2
+group by customer_id
+having sum(amount)>=100;
 
 
