@@ -126,3 +126,28 @@ where  ship_mode not in ('Standard Class','First Class') and order_date > '2020-
 
 select * from orders where customer_name not like 'A%n';
 
+
+-- 5- write a query to get all the orders where profit is negative (1871 rows)
+select * from orders
+where profit < 0;
+
+
+-- 6- write a query to get all the orders where either quantity is less than 3 or profit is 0 (3348)
+
+select * from orders
+where profit = 0 or quantity < 3;
+
+select * from orders where profit=0 or quantity<3;
+
+-- 7- your manager handles the sales for South region and he wants you to create a report of all the orders in his region where some discount is provided to the customers (815 rows)
+
+select * from orders where region='South' and discount>0;
+
+-- 8- write a query to find top 5 orders with highest sales in furniture category
+select distinct  category from orders;
+
+select * from orders
+where category in ('Furniture')
+order by sales desc
+limit 5;
+
