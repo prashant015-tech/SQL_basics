@@ -144,7 +144,7 @@ select * from orders where profit=0 or quantity<3;
 select * from orders where region='South' and discount>0;
 
 -- 8- write a query to find top 5 orders with highest sales in furniture category
-select distinct  category from orders;
+
 
 select * from orders
 where category in ('Furniture')
