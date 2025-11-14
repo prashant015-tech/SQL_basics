@@ -144,6 +144,7 @@ select * from orders where profit=0 or quantity<3;
 select * from orders where region='South' and discount>0;
 
 -- 8- write a query to find top 5 orders with highest sales in furniture category
+select distinct  category from orders;
 
 
 select * from orders
@@ -151,3 +152,12 @@ where category in ('Furniture')
 order by sales desc
 limit 5;
 
+-- 9- write a query to find all the records in technology and furniture category for the orders placed in the year 2020 only (1021 rows)
+
+select * from orders
+where category in ('Furniture','Technology' ) and order_date between  '2020-01-01' and '2020-12-31';
+
+
+-- 10-write a query to find all the orders where order date is in year 2020 but ship date is in 2021 (33 rows)
+select * from orders
+where (order_date between  '2020-01-01' and '2020-12-31') and (ship_date between  '2021-01-01' and '2021-12-31')
