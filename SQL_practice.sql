@@ -117,3 +117,12 @@ where (customer_name) like '_a_d%' ;
 
 select * from orders
 where (order_date)  between '2020-12-01' and '2020-12-31' ;
+
+-- 3- write a query to get all the orders where ship_mode is neither in 'Standard Class' nor in 'First Class' and ship_date is after nov 2020 (944 rows)
+select * from orders
+where  ship_mode not in ('Standard Class','First Class') and order_date > '2020-11-30' ;
+
+-- 4- write a query to get all the orders where customer name neither start with "A" and nor ends with "n" (9815 rows)
+
+select * from orders where customer_name not like 'A%n';
+
