@@ -50,6 +50,47 @@ where order_date between '2020-12-08' and '2020-12-10'
 order by order_date desc;
 
 
+-- filters with in
+
+select * from orders
+where quantity in (2,4,7)
+order by quantity desc;
+
+select distinct ship_mode from orders
+where ship_mode not in ('first Class','Same Day');
+
+-- and or condtions
+
+select * from orders
+where quantity >5 and order_date    < '2020-11-08';
+
+
+select * from orders
+where quantity >5 or order_date    < '2020-11-08';
+
+-- add extra columns during select
+
+select *,(profit/sales) as ratio  from orders
+where quantity >5 or order_date    < '2020-11-08';
+
+-- pattern matching like opertor
+
+select orders.order_id,orders.order_date,customer_name from orders
+where customer_name like 'Chris%';
+
+
+select distinct customer_name from orders
+where upper(customer_name)like 'C%';
 
 
 
+
+select distinct customer_name from orders
+where upper(customer_name) like '%C';
+
+select distinct customer_name from orders
+where upper(customer_name) like '%C%';
+
+
+select distinct customer_name from orders
+where upper(customer_name) like 'A%A';
