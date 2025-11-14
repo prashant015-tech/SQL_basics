@@ -30,4 +30,7 @@ Select * from orders;
 Select * from orders
 where upper(ship_mode) ='FIRST CLASS';
 
+select * from orders
+where order_date ='2020-12-08';
+
 
