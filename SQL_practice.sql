@@ -94,3 +94,26 @@ where upper(customer_name) like '%C%';
 
 select distinct customer_name from orders
 where upper(customer_name) like 'A%A';
+
+
+-- to make sure sum charters in front
+
+select distinct customer_name from orders
+where upper(customer_name) like '_A%';
+
+
+select distinct customer_name from orders
+where upper(customer_name) like '__A%';
+
+select distinct customer_name from orders
+where (customer_name) like 'C[al]%' ;
+
+-- 1- write a sql to get all the orders where customers name has "a" as second character and "d" as fourth characte
+
+select * from orders
+where (customer_name) like '_a_d%' ;
+
+-- - write a sql to get all the orders placed in the month of dec 2020 (352 rows)
+
+select * from orders
+where (order_date)  between '2020-12-01' and '2020-12-31' ;
